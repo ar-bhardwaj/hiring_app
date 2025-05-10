@@ -35,7 +35,7 @@ public class FileStorage {
 
                 throw new IllegalArgumentException("File name cannot be null");
             }
-           String fileName = System.currentTimeMillis() + files.getOriginalFilename();
+           String fileName = System.currentTimeMillis() + "_"+ files.getOriginalFilename();
 
             Path filePath = Paths.get(UPLOAD_DIRECTORY + fileName);
 

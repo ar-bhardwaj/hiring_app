@@ -20,8 +20,13 @@ public class DocumentController {
     @PostMapping(value="/{id}/upload-docs", consumes = {"multipart/form-data"})
     public ResponseEntity<Void> uploadDocument(@Valid @PathVariable Long id,
                                                @RequestPart("file") MultipartFile file,
-                                               @RequestPart("data") DocumentDTO data) {
+                                               @RequestParam("candidateId") Long candidateId,
+                                               @RequestParam("fileType") String fileType) {
+
         System.out.println("Received file: " + file.getOriginalFilename());
+
+        DocumentDTO data = new DocumentDTO(candidateId, fileType);
+
         System.out.println("Received data: " + data);
 
         if (file.isEmpty()) {

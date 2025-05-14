@@ -10,15 +10,14 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class JobOfferDTO {
 
-    public class JobOfferNotificationDTO {
         private Long id;
         private Long candidateId;
         private Boolean sent;
         private LocalDateTime sentAt;
         private Integer retryCount;
         private String errorMessage;
-    }
+
 }
